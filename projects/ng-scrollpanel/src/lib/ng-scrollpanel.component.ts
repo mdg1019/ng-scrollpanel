@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-ng-scrollpanel',
-  template: `
-    <p>
-      ng-scrollpanel works!
-    </p>
-  `,
-  styles: [
-  ]
+  selector: 'ng-scrollpanel',
+  templateUrl: './ng-scrollpanel.component.html',
+  styleUrls: ['./ng-scrollpanel.component.css']
 })
 export class NgScrollpanelComponent implements OnInit {
 
