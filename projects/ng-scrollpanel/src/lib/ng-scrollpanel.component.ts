@@ -15,7 +15,7 @@ export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.content!.nativeElement.onscroll = this.onScroll
+    this.content!.nativeElement.onscroll = this.onScroll;
   }
 
   ngDoCheck(): void {

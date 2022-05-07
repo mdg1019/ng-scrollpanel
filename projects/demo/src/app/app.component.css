@@ -2,3 +2,7 @@
   width: 768px;
   height: 600px;
 }
+
+.nowrap  {
+  white-space: nowrap;
+}

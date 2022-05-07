@@ -11,7 +11,7 @@
       velit euismod in. Nunc lobortis mattis aliquam faucibus purus in. Faucibus vitae aliquet nec ullamcorper.
     </p>
     <br>
-    <p>
+    <p [ngClass]="{ 'nowrap' : nowrap }">
       Convallis posuere morbi leo urna molestie at elementum eu. A cras semper auctor neque vitae tempus quam
       pellentesque nec. Semper auctor neque vitae tempus quam pellentesque. Quam nulla porttitor massa id neque aliquam.
       Ac odio tempor orci dapibus. Egestas sed sed risus pretium quam vulputate. Augue eget arcu dictum varius duis at
@@ -59,4 +59,6 @@
     <p>
 
   </ng-scrollpanel>
+  <br>
+  <button type="button" (click)="toggleHorizontalScrolling()">Toggle horizontal scrolling</button>
 </div>

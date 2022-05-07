@@ -21,13 +21,15 @@
   height: 100%;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr calc(var(--v-scrollbar-margin-left) + var(--v-scrollbar-width));
-  grid-template-rows: 1fr 12px;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 1fr max-content;
+  grid-template-areas:
+    "content vscroll"
+    "hscroll empty";
 }
 
 .content {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
+  grid-area: content;
 
   overflow: auto;
   -ms-overflow-style: none;
@@ -39,8 +41,7 @@
 }
 
 .vertical-scrollbar {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
+  grid-area: vscroll;
   margin-left: var(--v-scrollbar-margin-left);
   width: var(--v-scrollbar-width);
   height: 100%;
@@ -49,8 +50,7 @@
 }
 
 .horizontal-scrollbar {
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
+  grid-area: hscroll;
 
   margin-top: var(--h-scrollbar-margin-top);
   height: var(--h-scrollbar-height);
