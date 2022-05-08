@@ -1,0 +1,57 @@
+$h-scrollbar-background: blue;
+$h-scrollbar-margin-top: 4px;
+$h-scrollbar-width: 100%;
+$h-scrollbar-height: 4px;
+$h-scrollbar-total-height: calc(var($h-scrollbar-margin-top) + var(--h-scrollbar-height));
+
+$v-scrollbar-background: green;
+$v-scrollbar-margin-left: 4px;
+$v-scrollbar-width: 4px;
+$v-scrollbar-height: 100%;
+
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 1fr max-content;
+  grid-template-areas:
+    "content vscroll"
+    "hscroll empty";
+}
+
+.content {
+  grid-area: content;
+
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.vertical-scrollbar {
+  grid-area: vscroll;
+  margin-left: $v-scrollbar-margin-left;
+  width: $v-scrollbar-width;
+  height: 100%;
+
+  background-color: $v-scrollbar-background;
+}
+
+.horizontal-scrollbar {
+  grid-area: hscroll;
+
+  margin-top: $h-scrollbar-margin-top;
+  height:$h-scrollbar-height;
+
+  background-color: $h-scrollbar-background;
+}

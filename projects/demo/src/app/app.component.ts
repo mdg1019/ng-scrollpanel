@@ -3,15 +3,21 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  nowrap = false;
+  displayVerticalScrollbar = true;
+  displayHorizontalScrollbar = false;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
+  toggleVerticalScrolling() {
+    this.displayVerticalScrollbar = !this.displayVerticalScrollbar;
+    this.changeDetectorRef.detectChanges();
+  }
+
   toggleHorizontalScrolling() {
-    this.nowrap = !this.nowrap;
+    this.displayHorizontalScrollbar = !this.displayHorizontalScrollbar;
     this.changeDetectorRef.detectChanges();
   }
 }

@@ -11,7 +11,7 @@
       velit euismod in. Nunc lobortis mattis aliquam faucibus purus in. Faucibus vitae aliquet nec ullamcorper.
     </p>
     <br>
-    <p [ngClass]="{ 'nowrap' : nowrap }">
+    <p [ngClass]="{ 'nowrap' : displayHorizontalScrollbar }">
       Convallis posuere morbi leo urna molestie at elementum eu. A cras semper auctor neque vitae tempus quam
       pellentesque nec. Semper auctor neque vitae tempus quam pellentesque. Quam nulla porttitor massa id neque aliquam.
       Ac odio tempor orci dapibus. Egestas sed sed risus pretium quam vulputate. Augue eget arcu dictum varius duis at
@@ -34,31 +34,32 @@
       arcu risus.
     </p>
     <br>
-    <p>
-      Ullamcorper sit amet risus nullam eget felis. Amet consectetur adipiscing elit duis tristique sollicitudin nibh
-      sit. Risus nullam eget felis eget nunc lobortis. Malesuada nunc vel risus commodo viverra. Nascetur ridiculus mus
-      mauris vitae ultricies leo. Congue quisque egestas diam in. Vitae aliquet nec ullamcorper sit amet risus nullam
-      eget. Elit sed vulputate mi sit amet mauris commodo quis imperdiet. Ut faucibus pulvinar elementum integer enim
-      neque. Eu facilisis sed odio morbi quis. Scelerisque mauris pellentesque pulvinar pellentesque. Amet aliquam id
-      diam maecenas ultricies mi eget. Quam nulla porttitor massa id neque aliquam vestibulum. Convallis tellus id
-      interdum velit laoreet id. Et malesuada fames ac turpis egestas integer eget. Leo a diam sollicitudin tempor. Sed
-      cras ornare arcu dui vivamus arcu felis bibendum ut. Ut sem viverra aliquet eget sit amet tellus cras adipiscing.
-      Semper auctor neque vitae tempus quam pellentesque nec. Dapibus ultrices in iaculis nunc sed augue lacus viverra.
-    </p>
-    <br>
-    <p>
-      Lobortis mattis aliquam faucibus purus in massa. Purus viverra accumsan in nisl. Auctor augue mauris augue neque
-      gravida in fermentum et sollicitudin. A diam maecenas sed enim ut sem. Mauris pellentesque pulvinar pellentesque
-      habitant morbi. Justo laoreet sit amet cursus sit amet dictum. Sit amet purus gravida quis blandit turpis cursus
-      in hac. Id eu nisl nunc mi ipsum faucibus vitae. In metus vulputate eu scelerisque felis imperdiet proin. Etiam
-      erat velit scelerisque in dictum non consectetur. Non arcu risus quis varius. Volutpat diam ut venenatis tellus
-      in. At imperdiet dui accumsan sit amet nulla. Magna etiam tempor orci eu lobortis elementum. Pellentesque nec nam
-      aliquam sem et tortor consequat. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae.
-    </p>
-    <br>
-    <p>
+    <div *ngIf="displayVerticalScrollbar">
+      <p>
+        Ullamcorper sit amet risus nullam eget felis. Amet consectetur adipiscing elit duis tristique sollicitudin nibh
+        sit. Risus nullam eget felis eget nunc lobortis. Malesuada nunc vel risus commodo viverra. Nascetur ridiculus mus
+        mauris vitae ultricies leo. Congue quisque egestas diam in. Vitae aliquet nec ullamcorper sit amet risus nullam
+        eget. Elit sed vulputate mi sit amet mauris commodo quis imperdiet. Ut faucibus pulvinar elementum integer enim
+        neque. Eu facilisis sed odio morbi quis. Scelerisque mauris pellentesque pulvinar pellentesque. Amet aliquam id
+        diam maecenas ultricies mi eget. Quam nulla porttitor massa id neque aliquam vestibulum. Convallis tellus id
+        interdum velit laoreet id. Et malesuada fames ac turpis egestas integer eget. Leo a diam sollicitudin tempor. Sed
+        cras ornare arcu dui vivamus arcu felis bibendum ut. Ut sem viverra aliquet eget sit amet tellus cras adipiscing.
+        Semper auctor neque vitae tempus quam pellentesque nec. Dapibus ultrices in iaculis nunc sed augue lacus viverra.
+      </p>
+      <br>
+      <p>
+        Lobortis mattis aliquam faucibus purus in massa. Purus viverra accumsan in nisl. Auctor augue mauris augue neque
+        gravida in fermentum et sollicitudin. A diam maecenas sed enim ut sem. Mauris pellentesque pulvinar pellentesque
+        habitant morbi. Justo laoreet sit amet cursus sit amet dictum. Sit amet purus gravida quis blandit turpis cursus
+        in hac. Id eu nisl nunc mi ipsum faucibus vitae. In metus vulputate eu scelerisque felis imperdiet proin. Etiam
+        erat velit scelerisque in dictum non consectetur. Non arcu risus quis varius. Volutpat diam ut venenatis tellus
+        in. At imperdiet dui accumsan sit amet nulla. Magna etiam tempor orci eu lobortis elementum. Pellentesque nec nam
+        aliquam sem et tortor consequat. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae.
+      </p>
+    </div>
 
   </ng-scrollpanel>
   <br>
+  <button type="button" style="margin-right: 4px" (click)="toggleVerticalScrolling()">Toggle vertical scrolling</button>
   <button type="button" (click)="toggleHorizontalScrolling()">Toggle horizontal scrolling</button>
 </div>

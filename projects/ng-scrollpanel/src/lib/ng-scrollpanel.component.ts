@@ -3,7 +3,7 @@ import { AfterViewInit, Component, DoCheck, ElementRef, OnInit, ViewChild } from
 @Component({
   selector: 'ng-scrollpanel',
   templateUrl: './ng-scrollpanel.component.html',
-  styleUrls: ['./ng-scrollpanel.component.css']
+  styleUrls: ['./ng-scrollpanel.component.scss']
 })
 export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
   @ViewChild('content') content?: ElementRef;
