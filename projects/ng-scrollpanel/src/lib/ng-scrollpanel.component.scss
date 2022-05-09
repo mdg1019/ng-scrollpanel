@@ -3,7 +3,7 @@ $h-scrollbar-track-background: #1f2d40;
 $h-scrollbar-thumb-background: #64B5F6;
 $h-scrollbar-margin-top: .25rem;
 $h-scrollbar-width: 100%;
-$h-scrollbar-height: .25rem;
+$h-scrollbar-height: .5rem;
 $h-scrollbar-border-radius: 100px;
 $h-scrollbar-track-border-radius: 100px;
 $h-scrollbar-thumb-border-radius: 100px;
@@ -12,7 +12,7 @@ $v-scrollbar-background: transparent;
 $v-scrollbar-track-background: #1f2d40;
 $v-scrollbar-thumb-background: #64B5F6;
 $v-scrollbar-margin-left: .25rem;
-$v-scrollbar-width: .25rem;
+$v-scrollbar-width: .5rem;
 $v-scrollbar-height: 100%;
 $v-scrollbar-border-radius: 100px;
 $v-scrollbar-track-border-radius: 100px;
@@ -72,6 +72,8 @@ $v-scrollbar-thumb-border-radius: 100px;
     height: 100%;
     background-color: $v-scrollbar-thumb-background;
     border-radius: $v-scrollbar-thumb-border-radius;
+    cursor: grabbing;
+    user-select: none;
   }
 
 }
@@ -99,5 +101,7 @@ $v-scrollbar-thumb-border-radius: 100px;
     height: 100%;
     background-color: $h-scrollbar-thumb-background;
     border-radius: $h-scrollbar-thumb-border-radius;
+    cursor: grabbing;
+    user-select: none;
   }
 }
