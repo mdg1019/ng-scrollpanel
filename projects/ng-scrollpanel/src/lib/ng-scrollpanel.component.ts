@@ -63,7 +63,7 @@ export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
 
     const dy = (event.clientY - this._y) * 8;
     this._y = event.clientY;
-    this.content?.nativeElement.scroll(this.content?.nativeElement.scrollLeft, this.content?.nativeElement.scrollTop + dy);
+    this.content!.nativeElement.scrollTop = this.content?.nativeElement.scrollTop + dy;
   }
 
   onVScrollMouseUp(event: MouseEvent) {
@@ -80,21 +80,33 @@ export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
 
     const dx = (event.clientX - this._x) * 8;
     this._x = event.clientX;
-    this.content?.nativeElement.scroll(this.content?.nativeElement.scrollLeft + dx, this.content?.nativeElement.scrollTop);
-
-    const thumbLeft = (this.content?.nativeElement.scrollLeft / this.content?.nativeElement.scrollWidth) * this.content?.nativeElement.clientWidth;
-    this.hScrollThumbLeft = `${thumbLeft}px`;
+    this.content!.nativeElement.scrollLeft = this.content?.nativeElement.scrollLeft + dx;
   }
 
   onHScrollMouseUp(event: MouseEvent) {
     this._mouseDown = false;
   }
 
-  private onScroll = (event: any): void => {
-    const scrollTop = event.srcElement.scrollTop;
+  onVTrackClicked(event: MouseEvent) {
+    const { x, y } = this.getMouseClickRelativeCoordinates(event);
+    const percentOfContent = (y - this.getVScrollThumbHeight() / 2) / this.vscroll?.nativeElement.clientHeight;
+    const newTop = this.content?.nativeElement.scrollHeight * percentOfContent;
+    this.content!.nativeElement.scrollTop = newTop;
+  }
 
-    const thumbTop = (scrollTop / this.content?.nativeElement.scrollHeight) * this.content?.nativeElement.clientHeight;
+  onHTrackClicked(event: MouseEvent) {
+    const { x, y } = this.getMouseClickRelativeCoordinates(event);
+    const percentOfContent = (x - this.getHScrollThumbWidth() / 2) / this.hscroll?.nativeElement.clientWidth;
+    const newLeft = this.content?.nativeElement.scrollWidth * percentOfContent;
+    this.content!.nativeElement.scrollLeft =  newLeft;
+  }
+
+  private onScroll = (event: any): void => {
+    const thumbTop = (event.srcElement.scrollTop / this.content?.nativeElement.scrollHeight) * this.content?.nativeElement.clientHeight;
     this.vScrollThumbTop = `${thumbTop}px`;
+
+    const thumbLeft = (event.srcElement.scrollLeft / this.content?.nativeElement.scrollWidth) * this.content?.nativeElement.clientWidth;
+    this.hScrollThumbLeft = `${thumbLeft}px`;
   }
 
   private turnScrollbarOnAndOff(display: boolean, scrollbar?: ElementRef) {
@@ -103,5 +115,24 @@ export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
     } else if (this.content) {
       scrollbar?.nativeElement.setAttribute('style', 'display: none');
     }
+  }
+
+  private getMouseClickRelativeCoordinates(event: any) {
+    let boundingClientRect = event.target.getBoundingClientRect();
+
+    return {
+      x: event.clientX - boundingClientRect.left,
+      y: event.clientY - boundingClientRect.top
+    };
+  }
+
+  private getVScrollThumbHeight() {
+    const inPercent = +this.vScrollThumbHeight.slice(0, -1);
+    return this.vscroll?.nativeElement.clientHeight * inPercent / 100;
+  }
+
+  private getHScrollThumbWidth() {
+    const inPercent = +this.hScrollThumbWidth.slice(0, -1);
+    return this.hscroll?.nativeElement.clientWidth * inPercent / 100;
   }
 }

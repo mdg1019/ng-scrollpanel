@@ -3,26 +3,28 @@
     <ng-content></ng-content>
   </div>
   <div #vscroll class="vertical-scrollbar">
-    <div class="vertical-scrollbar__track">
+    <div class="vertical-scrollbar__track" (click)="onVTrackClicked($event)">
       <div
         class="vertical-scrollbar__thumb"
         [style.height]="vScrollThumbHeight"
         [style.top]="vScrollThumbTop"
         (mousedown)="onVScrollMouseDown($event)"
         (mousemove)="onVScrollMouseMove($event)"
-        (mouseup)="onVScrollMouseUp($event)">
+        (mouseup)="onVScrollMouseUp($event)"
+        (click)="$event.stopPropagation()">
       </div>
     </div>
   </div>
   <div #hscroll class="horizontal-scrollbar">
-    <div class="horizontal-scrollbar__track">
+    <div class="horizontal-scrollbar__track" (click)="onHTrackClicked($event)">
       <div
         class="horizontal-scrollbar__thumb"
         [style.width]="hScrollThumbWidth"
         [style.left]="hScrollThumbLeft"
         (mousedown)="onHScrollMouseDown($event)"
         (mousemove)="onHScrollMouseMove($event)"
-        (mouseup)="onHScrollMouseUp($event)"></div>
+        (mouseup)="onHScrollMouseUp($event)"
+        (click)="$event.stopPropagation()"></div>
     </div>
   </div>
 </div>
