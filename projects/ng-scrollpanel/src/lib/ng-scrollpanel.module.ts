@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NgScrollpanelComponent } from './ng-scrollpanel.component';
 
@@ -8,6 +9,7 @@ import { NgScrollpanelComponent } from './ng-scrollpanel.component';
     NgScrollpanelComponent
   ],
   imports: [
+    CommonModule
   ],
   exports: [
     NgScrollpanelComponent

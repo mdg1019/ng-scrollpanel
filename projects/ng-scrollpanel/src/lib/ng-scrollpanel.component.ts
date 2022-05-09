@@ -10,6 +10,11 @@ export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
   @ViewChild('vscroll') vscroll?: ElementRef;
   @ViewChild('hscroll') hscroll?: ElementRef;
 
+  vScrollThumbTop = '0px';
+  vScrollThumbHeight = '0%';
+  hScrollThumbLeft = '0px';
+  hScrollThumbWidth = '0%';
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -26,6 +31,16 @@ export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
 
     this.turnScrollbarOnAndOff(displayVerticalScrollbar, this.vscroll);
     this.turnScrollbarOnAndOff(displayHorizontalScrollbar, this.hscroll);
+
+    if (displayVerticalScrollbar) {
+      const thumbHeight = (this.content?.nativeElement.clientHeight / this.content?.nativeElement.scrollHeight) * 100;
+      this.vScrollThumbHeight = `${thumbHeight}%`;
+    }
+
+    if (displayHorizontalScrollbar) {
+      const thumbWidth = (this.content?.nativeElement.clientWidth / this.content?.nativeElement.scrollWidth) * 100;
+      this.hScrollThumbWidth = `${thumbWidth}%`;
+    }
   }
 
   private onScroll = (event: any): void => {

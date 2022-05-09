@@ -56,19 +56,18 @@ $v-scrollbar-thumb-border-radius: 100px;
   width: $v-scrollbar-width;
   height: 100%;
   border-radius: $v-scrollbar-border-radius;
-  position: relative;
 
   &__track {
-    top: 0;
     width: 100%;
     height: 100%;
     background-color: $v-scrollbar-track-background;
     border-radius: $v-scrollbar-track-border-radius;
-    position: relative
   }
 
   &__thumb {
+    position: relative;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: $v-scrollbar-thumb-background;
@@ -85,7 +84,6 @@ $v-scrollbar-thumb-border-radius: 100px;
   height:$h-scrollbar-height;
 
   &__track {
-    top: 0;
     width: 100%;
     height: 100%;
     background-color: $h-scrollbar-track-background;
@@ -94,7 +92,9 @@ $v-scrollbar-thumb-border-radius: 100px;
   }
 
   &__thumb {
+    position: relative;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: $h-scrollbar-thumb-background;
