@@ -44,9 +44,10 @@ export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
   }
 
   private onScroll = (event: any): void => {
-    const number = event.srcElement.scrollTop;
-    console.log(event)
-    console.log('I am scrolling ' + number);
+    const scrollTop = event.srcElement.scrollTop;
+
+    const thumbTop = (scrollTop / this.content?.nativeElement.scrollHeight) * this.content?.nativeElement.clientHeight;
+    this.vScrollThumbTop = `${thumbTop}px`;
   }
 
   private turnScrollbarOnAndOff(display: boolean, scrollbar?: ElementRef) {
