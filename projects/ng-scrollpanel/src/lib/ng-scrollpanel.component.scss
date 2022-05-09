@@ -1,12 +1,12 @@
 $h-scrollbar-background: blue;
-$h-scrollbar-margin-top: 4px;
+$h-scrollbar-margin-top: .25rem;
 $h-scrollbar-width: 100%;
-$h-scrollbar-height: 4px;
+$h-scrollbar-height: .25rem;
 $h-scrollbar-total-height: calc(var($h-scrollbar-margin-top) + var(--h-scrollbar-height));
 
 $v-scrollbar-background: green;
-$v-scrollbar-margin-left: 4px;
-$v-scrollbar-width: 4px;
+$v-scrollbar-margin-left: .25rem;
+$v-scrollbar-width: .25rem;
 $v-scrollbar-height: 100%;
 
 :host {
