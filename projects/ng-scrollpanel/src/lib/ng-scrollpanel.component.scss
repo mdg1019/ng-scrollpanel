@@ -1,13 +1,23 @@
-$h-scrollbar-background: blue;
+$h-scrollbar-background: transparnet;
+$h-scrollbar-track-background: #1f2d40;
+$h-scrollbar-thumb-background: #64B5F6;
 $h-scrollbar-margin-top: .25rem;
 $h-scrollbar-width: 100%;
 $h-scrollbar-height: .25rem;
-$h-scrollbar-total-height: calc(var($h-scrollbar-margin-top) + var(--h-scrollbar-height));
+$h-scrollbar-border-radius: 100px;
+$h-scrollbar-track-border-radius: 100px;
+$h-scrollbar-thumb-border-radius: 100px;
 
-$v-scrollbar-background: green;
+$v-scrollbar-background: transparent;
+$v-scrollbar-track-background: #1f2d40;
+$v-scrollbar-thumb-background: #64B5F6;
 $v-scrollbar-margin-left: .25rem;
 $v-scrollbar-width: .25rem;
 $v-scrollbar-height: 100%;
+$v-scrollbar-border-radius: 100px;
+$v-scrollbar-track-border-radius: 100px;
+$v-scrollbar-thumb-border-radius: 100px;
+
 
 :host {
   width: 100%;
@@ -40,18 +50,54 @@ $v-scrollbar-height: 100%;
 
 .vertical-scrollbar {
   grid-area: vscroll;
+
+  background-color: $v-scrollbar-background;
   margin-left: $v-scrollbar-margin-left;
   width: $v-scrollbar-width;
   height: 100%;
+  border-radius: $v-scrollbar-border-radius;
+  position: relative;
 
-  background-color: $v-scrollbar-background;
+  &__track {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $v-scrollbar-track-background;
+    border-radius: $v-scrollbar-track-border-radius;
+    position: relative
+  }
+
+  &__thumb {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $v-scrollbar-thumb-background;
+    border-radius: $v-scrollbar-thumb-border-radius;
+  }
+
 }
 
 .horizontal-scrollbar {
   grid-area: hscroll;
 
+  background-color: $h-scrollbar-background;
   margin-top: $h-scrollbar-margin-top;
   height:$h-scrollbar-height;
 
-  background-color: $h-scrollbar-background;
+  &__track {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $h-scrollbar-track-background;
+    border-radius: $h-scrollbar-track-border-radius;
+    position: relative;
+  }
+
+  &__thumb {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $h-scrollbar-thumb-background;
+    border-radius: $h-scrollbar-thumb-border-radius;
+  }
 }
