@@ -6,14 +6,13 @@ import { NgScrollpanelModule } from 'projects/ng-scrollpanel/src/public-api';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     NgScrollpanelModule
   ],
-  providers: [],
+  declarations: [
+    AppComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
