@@ -1,7 +1,11 @@
 <h2>ng-scrollbar Demo</h2>
 <br>
 <div class="scrollpanel-container">
-  <ng-scrollpanel>
+  <ng-scrollpanel
+    [vTrackClass]="vTrackClass"
+    [vThumbClass]="vThumbClass"
+    [hTrackClass]="hTrackClass"
+    [hThumbClass]="hThumbClass">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
       magna aliqua. Quam viverra orci sagittis eu volutpat. Praesent tristique magna sit amet purus gravida quis
@@ -22,19 +26,19 @@
       ante metus dictum at tempor commodo ullamcorper.
     </p>
     <br>
-    <p>
-      In nisl nisi scelerisque eu ultrices vitae auctor eu. Quam nulla porttitor massa id neque. Et tortor at risus
-      viverra adipiscing at. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Proin sed
-      libero enim sed faucibus turpis in. Massa sed elementum tempus egestas. Id leo in vitae turpis. Amet facilisis
-      magna etiam tempor orci eu. Varius sit amet mattis vulputate enim nulla aliquet porttitor. Odio facilisis mauris
-      sit amet massa vitae. Risus quis varius quam quisque id. Lacus vel facilisis volutpat est velit egestas. Aenean
-      vel elit scelerisque mauris pellentesque. Aliquet bibendum enim facilisis gravida neque convallis. Mi sit amet
-      mauris commodo. Imperdiet massa tincidunt nunc pulvinar sapien et ligula. Mattis aliquam faucibus purus in massa
-      tempor nec feugiat. Orci sagittis eu volutpat odio facilisis mauris sit amet. Amet porttitor eget dolor morbi non
-      arcu risus.
-    </p>
-    <br>
     <div *ngIf="displayVerticalScrollbar">
+      <p>
+        In nisl nisi scelerisque eu ultrices vitae auctor eu. Quam nulla porttitor massa id neque. Et tortor at risus
+        viverra adipiscing at. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Proin sed
+        libero enim sed faucibus turpis in. Massa sed elementum tempus egestas. Id leo in vitae turpis. Amet facilisis
+        magna etiam tempor orci eu. Varius sit amet mattis vulputate enim nulla aliquet porttitor. Odio facilisis mauris
+        sit amet massa vitae. Risus quis varius quam quisque id. Lacus vel facilisis volutpat est velit egestas. Aenean
+        vel elit scelerisque mauris pellentesque. Aliquet bibendum enim facilisis gravida neque convallis. Mi sit amet
+        mauris commodo. Imperdiet massa tincidunt nunc pulvinar sapien et ligula. Mattis aliquam faucibus purus in massa
+        tempor nec feugiat. Orci sagittis eu volutpat odio facilisis mauris sit amet. Amet porttitor eget dolor morbi non
+        arcu risus.
+      </p>
+      <br>
       <p>
         Ullamcorper sit amet risus nullam eget felis. Amet consectetur adipiscing elit duis tristique sollicitudin nibh
         sit. Risus nullam eget felis eget nunc lobortis. Malesuada nunc vel risus commodo viverra. Nascetur ridiculus mus
@@ -58,8 +62,7 @@
       </p>
     </div>
   </ng-scrollpanel>
-  <br>
-  <br>
-  <button type="button" class="btn" style="margin-right: .5rem" (click)="toggleVerticalScrolling()">Toggle vertical scrolling</button>
-  <button type="button" class="btn" (click)="toggleHorizontalScrolling()">Toggle horizontal scrolling</button>
 </div>
+<button type="button" class="btn" (click)="toggleVerticalScrolling()">Toggle vertical scrolling</button>
+<button type="button" class="btn" (click)="toggleHorizontalScrolling()">Toggle horizontal scrolling</button>
+<button type="button" class="btn" (click)="toggleLightDarkMode()">Toggle light/dark mode</button>

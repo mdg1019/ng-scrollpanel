@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, DoCheck, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'ng-scrollpanel',
@@ -6,13 +6,21 @@ import { AfterViewInit, Component, DoCheck, ElementRef, OnInit, ViewChild } from
   styleUrls: ['./ng-scrollpanel.component.scss']
 })
 export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
+  @ViewChild('content') content?: ElementRef;
+  @ViewChild('vscroll') vscroll?: ElementRef;
+  @ViewChild('hscroll') hscroll?: ElementRef;
+
+  @Input() vScrollbarClass: string = '';
+  @Input() vTrackClass: string = '';
+  @Input() vThumbClass: string = '';
+  @Input() hScrollbarClass: string = '';
+  @Input() hTrackClass: string = '';
+  @Input() hThumbClass: string = '';
+
   private _x = 0;
   private _y = 0;
   private _mouseDown = false;
 
-  @ViewChild('content') content?: ElementRef;
-  @ViewChild('vscroll') vscroll?: ElementRef;
-  @ViewChild('hscroll') hscroll?: ElementRef;
 
   vScrollThumbTop = '0px';
   vScrollThumbHeight = '0%';

@@ -2,10 +2,11 @@
   <div #content class="content">
     <ng-content></ng-content>
   </div>
-  <div #vscroll class="vertical-scrollbar">
-    <div class="vertical-scrollbar__track" (click)="onVTrackClicked($event)">
+  <div #vscroll class="vertical-scrollbar" [ngClass]="vScrollbarClass">
+    <div  [ngClass]="vTrackClass" class="vertical-scrollbar__track" (click)="onVTrackClicked($event)">
       <div
         class="vertical-scrollbar__thumb"
+        [ngClass]="vThumbClass"
         [style.height]="vScrollThumbHeight"
         [style.top]="vScrollThumbTop"
         (mousedown)="onVScrollMouseDown($event)"
@@ -15,10 +16,11 @@
       </div>
     </div>
   </div>
-  <div #hscroll class="horizontal-scrollbar">
-    <div class="horizontal-scrollbar__track" (click)="onHTrackClicked($event)">
+  <div #hscroll class="horizontal-scrollbar" [ngClass]="hScrollbarClass">
+    <div class="horizontal-scrollbar__track" [ngClass]="hTrackClass" (click)="onHTrackClicked($event)">
       <div
         class="horizontal-scrollbar__thumb"
+        [ngClass]="hThumbClass"
         [style.width]="hScrollThumbWidth"
         [style.left]="hScrollThumbLeft"
         (mousedown)="onHScrollMouseDown($event)"

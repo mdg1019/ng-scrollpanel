@@ -1,6 +1,25 @@
-$text-color: rgba(#ffffff, .87);
-$button-text-color: #212529;
-$button-background-color: #64B5F6;
+:root {
+  --text-color: #dedede;
+  --background-color: #121212;
+  --button-text-color: #212529;
+  --button-background-color: #64B5F6;
+}
+
+.theme-light {
+  --text-color: #212121;
+  --background-color: #fff;
+  --button-text-color: #fff;
+  --button-background-color: #248d18;
+
+  &__v-track-class, &__h-track-class {
+    background-color: #dedede !important;
+    border: 1px solid var(--text-color)
+  }
+
+  &__v-thumb-class, &__h-thumb-class {
+    background-color: #248d18 !important;
+  }
+}
 
 *,
 *::after,
@@ -14,19 +33,19 @@ body {
     box-sizing: border-box;
     padding: 2rem;
     font-family: Arial, Helvetica, sans-serif;
-    color: $text-color;
-    background-color: #121212;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .btn {
-  background-color: $button-background-color;
-  color: $button-text-color;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
   font-size: 1rem;
   padding: .5rem;
   border: none;
   border-radius: 3px;
 
   &:hover {
-    background-color: darken($button-background-color, 10%);
+    filter: brightness(85%);
   }
 }
