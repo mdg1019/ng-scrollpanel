@@ -1,24 +1,67 @@
 # NgScrollpanel
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+NgScrollpanel is an angular container component that features customizable scrollbars.
 
-## Code scaffolding
+### Adding NgScrollpanel to Your Angular App
 
-Run `ng generate component component-name --project ng-scrollpanel` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-scrollpanel`.
-> Note: Don't forget to add `--project ng-scrollpanel` or else it will be added to the default project in your `angular.json` file. 
+NgScrollPanel is added to an Angular app with the following npm command:
 
-## Build
+```
+npm install ng-scrollpanel
+```
 
-Run `ng build ng-scrollpanel` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Importing NgScrollpanelModule into AppModule
 
-## Publishing
+To use NgScrollpanel in your app, you need to import `NgScrollPanelModule` into either `AppModule` or perhaps a more specific feature module. This is how it might look to import it into `app.module.ts`:
 
-After building your library with `ng build ng-scrollpanel`, go to the dist folder `cd dist/ng-scrollpanel` and run `npm publish`.
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-## Running unit tests
+import { NgScrollpanelModule } from 'projects/ng-scrollpanel/src/public-api';
 
-Run `ng test ng-scrollpanel` to execute the unit tests via [Karma](https://karma-runner.github.io).
+import { AppComponent } from './app.component';
 
-## Further help
+@NgModule({
+  imports: [
+    BrowserModule,
+   NgScrollpanelModule
+  ],
+  declarations: [
+    AppComponent
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### HTML Markup
+
+As it's name implies, NgScrollpanel is a panel container with automatic scrollbars. It is used in your app's HTML by specfying the `ng-scrollpanel` selector like the following:
+
+```html
+<div>
+  <ng-scrollpanel>
+    <p>The scrollable HTML</p>
+    <p>content goes here.</p>
+  </ng-scrollpanel>
+</div>
+
+```
+
+### Optional Attributes
+
+Either or both of the scrollbars' stylings can be altered using six optional attributes. These attributes are used to pass the name of the CSS classes that will be used to modify the existing stylings. 
+
+| Attribute | Description |
+| ---------- | ---------- |
+| vScrollbarClass | Defines a custom class for styling the vertical scrollbar's bottom layer. Useful for defining a custom width. |
+| vTrackClass | Defines a custom class for styling the vertical scrollbar's track. Useful setting a custom background color, border, border-radius, shadow, etc. |
+| vThumbClass | Defines a custom class for styling the vertical scrollbar's thumb. Useful for setting a custom background color, border, border-radius, shadow, etc. |
+| hScrollbarClass | Defines a custom class for styling the horizontal scrollbar's bottom layer. Useful for defining a custom height. |
+| hTrackClass | Defines a custom class for styling the horizontal scrollbar's track. Useful setting a custom background color, border, border-radius, shadow, etc. |
+| hThumbClass | Defines a custom class for styling the horizontal scrollbar's thumb. Useful for setting a custom background color, border, border-radius, shadow, etc. |
+
+It is important to note that the custom CSS classes must in a non-component CSS file like `styles.css, styles.scss, etc.` or you must use `encapsulation: ViewEncapsulation.None` in your component's `@Component` decorator. 
+
+When redefining a CSS style that is set inside of the `NgScrollpanelComponent` you must use `!important` to override the default style.

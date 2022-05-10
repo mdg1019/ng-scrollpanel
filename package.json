@@ -1,6 +1,30 @@
 {
   "name": "ng-scrollpanel",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "NgScrollpanel is an angular container component that features customizable scrollbars.",
+  "author": "Mark Goodwin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdg1019/ng-scrollpanel"
+  },
+  "bugs": {
+    "url": "https://github.com/mdg1019/ng-scrollpanel/issues"
+  },
+  "homepage": "https://github.com/mdg1019/ng-scrollpanel",
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript",
+    "css",
+    "scss",
+    "panel",
+    "container",
+    "scrollbar",
+    "scroll",
+    "custom",
+    "customizable"
+  ],
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +32,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~13.3.0",
     "@angular/common": "~13.3.0",
