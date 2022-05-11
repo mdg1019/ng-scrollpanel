@@ -1,6 +1,6 @@
 # NgScrollpanel
 
-NgScrollpanel is an angular container component that features customizable scrollbars.
+NgScrollpanel is an Angular container component that features customizable scrollbars.
 
 ### Adding NgScrollpanel to Your Angular App
 

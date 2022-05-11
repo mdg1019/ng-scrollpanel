@@ -56,12 +56,12 @@ Either or both of the scrollbars' stylings can be altered using six optional att
 | Attribute | Description |
 | ---------- | ---------- |
 | vScrollbarClass | Defines a custom class for styling the vertical scrollbar's bottom layer. Useful for defining a custom width. |
-| vTrackClass | Defines a custom class for styling the vertical scrollbar's track. Useful setting a custom background color, border, border-radius, shadow, etc. |
+| vTrackClass | Defines a custom class for styling the vertical scrollbar's track. Useful for setting a custom background color, border, border-radius, shadow, etc. |
 | vThumbClass | Defines a custom class for styling the vertical scrollbar's thumb. Useful for setting a custom background color, border, border-radius, shadow, etc. |
 | hScrollbarClass | Defines a custom class for styling the horizontal scrollbar's bottom layer. Useful for defining a custom height. |
-| hTrackClass | Defines a custom class for styling the horizontal scrollbar's track. Useful setting a custom background color, border, border-radius, shadow, etc. |
+| hTrackClass | Defines a custom class for styling the horizontal scrollbar's track. Useful for setting a custom background color, border, border-radius, shadow, etc. |
 | hThumbClass | Defines a custom class for styling the horizontal scrollbar's thumb. Useful for setting a custom background color, border, border-radius, shadow, etc. |
 
-It is important to note that the custom CSS classes must in a non-component CSS file like `styles.css, styles.scss, etc.` or you must use `encapsulation: ViewEncapsulation.None` in your component's `@Component` decorator. 
+It is important to note that the custom CSS classes must be defined in a non-component CSS file like `styles.css, styles.scss, etc.` or you must use `encapsulation: ViewEncapsulation.None` in your component's `@Component` decorator. 
 
 When redefining a CSS style that is set inside of the `NgScrollpanelComponent` you must use `!important` to override the default style.
