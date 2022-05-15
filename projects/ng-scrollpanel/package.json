@@ -1,6 +1,6 @@
 {
   "name": "ng-scrollpanel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "NgScrollpanel is an angular container component that features customizable scrollbars.",
   "author": "Mark Goodwin",
   "repository": {

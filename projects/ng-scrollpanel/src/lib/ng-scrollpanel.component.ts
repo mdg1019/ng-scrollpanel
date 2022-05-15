@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, DoCheck, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, DoCheck, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'ng-scrollpanel',
@@ -27,7 +27,7 @@ export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
   hScrollThumbLeft = '0px';
   hScrollThumbWidth = '0%';
 
-  constructor() {}
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     window.onmouseup = (event) => {
@@ -115,6 +115,8 @@ export class NgScrollpanelComponent implements OnInit, AfterViewInit, DoCheck {
 
     const thumbLeft = (event.srcElement.scrollLeft / this.content?.nativeElement.scrollWidth) * this.content?.nativeElement.clientWidth;
     this.hScrollThumbLeft = `${thumbLeft}px`;
+
+    this.changeDetectorRef.detectChanges();
   }
 
   private turnScrollbarOnAndOff(display: boolean, scrollbar?: ElementRef) {
